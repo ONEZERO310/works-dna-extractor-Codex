@@ -6,7 +6,7 @@
 
 ## 这是什么？
 
-Works DNA Extractor 是一个面向 AI 写作助手的技能（skill），**同时兼容 Hermes Agent、Claude Code、OpenAI Codex 三大主流 AI Agent 平台**。
+Works DNA Extractor 是一个面向 AI 写作助手的技能（skill），**同时兼容 Hermes Agent、Codex、OpenAI Codex 三大主流 AI Agent 平台**。
 
 核心思路：**提取方法，而非模仿文字**。
 
@@ -34,7 +34,7 @@ Works DNA Extractor 是一个面向 AI 写作助手的技能（skill），**同�
 | 平台 | 入口文件 | 加载方式 |
 |------|----------|----------|
 | **Hermes Agent** | `SKILL.md` | `/skill works-dna-extractor` 或自动匹配 |
-| **Claude Code** | `.claude/skills/works-dna-extractor.md` + `CLAUDE.md` | 自然语言自动触发 |
+| **Codex** | `codex/skills/works-dna-extractor.md` + `AGENTS.md` | 自然语言自动触发 |
 | **OpenAI Codex** | `AGENTS.md` | 启动时自动加载 |
 
 ## 安装
@@ -47,14 +47,14 @@ hermes skill install works-dna-extractor
 cp -r works-dna-extractor ~/.hermes/skills/
 ```
 
-### Claude Code
+### Codex
 
 ```bash
-# 将 .claude/skills/ 目录复制到你的项目中
-cp -r .claude/ /path/to/your/project/.claude/
+# 将 codex/skills/ 目录复制到你的项目中
+cp -r codex/ /path/to/your/project/codex/
 
-# 或将 SKILL.md 内容追加到项目的 CLAUDE.md 中
-cat SKILL.md >> /path/to/your/project/CLAUDE.md
+# 或将 SKILL.md 内容追加到项目的 AGENTS.md 中
+cat SKILL.md >> /path/to/your/project/AGENTS.md
 ```
 
 ### OpenAI Codex
@@ -92,11 +92,11 @@ cp AGENTS.md /path/to/your/project/
 ```
 works-dna-extractor/
 ├── SKILL.md                              # Hermes Agent 技能文件（核心逻辑）
-├── CLAUDE.md                             # Claude Code 项目上下文
+├── AGENTS.md                             # Codex 项目上下文
 ├── AGENTS.md                             # Codex / 通用 Agent 指令
-├── .claude/
+├── codex/
 │   └── skills/
-│       └── works-dna-extractor.md        # Claude Code 自动触发技能
+│       └── works-dna-extractor.md        # Codex 自动触发技能
 ├── agents/
 │   └── openai.yaml                       # OpenAI Agent 配置
 ├── references/
