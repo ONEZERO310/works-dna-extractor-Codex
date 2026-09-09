@@ -1,5 +1,3 @@
-# Codex 兼容版项目说明
-
 # Works DNA Extractor
 
 ## Project Purpose
